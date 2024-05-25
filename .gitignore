@@ -230,4 +230,5 @@ examples/djgpp
 examples/linux
 examples/ms
 examples/watcom
+examples/mac
 !examples/*/Makefile

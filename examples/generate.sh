@@ -12,14 +12,18 @@ generate() {
     cp asm_io.* *.c *.cpp *.h *.hpp $2
 }
 
+generate mac mac
 generate linux linux
 generate djgpp djgpp
 generate djgpp ms
 generate bcc borland
 generate watcom watcom
 
+
 # Assemble the asm_io.asm file to create the object file
-cd linux
+cd mac
+nasm -f macho -d MACHO_TYPE asm_io.asm
+cd ../linux
 nasm -f elf -d ELF_TYPE asm_io.asm
 cd ../djgpp
 nasm -f coff -d COFF_TYPE asm_io.asm

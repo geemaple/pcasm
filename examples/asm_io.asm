@@ -27,6 +27,15 @@
 %define DF_MASK 00000400h
 %define OF_MASK 00000800h
 
+;
+; MacOS Mojave
+;
+%ifdef MACHO_TYPE
+  %define _scanf   _scanf
+  %define _printf  _printf
+  %define _getchar _getchar
+  %define _putchar _putchar
+%endif
 
 ;
 ; Linux C doesn't put underscores on labels
